@@ -10,7 +10,7 @@
     <name>LandsAPI</name>
 
     <repositories>
-        <!-- This adds the Spigot Maven repository to the build -->
+        <!-- Adds the Spigot Maven repository to the build -->
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
