@@ -12,7 +12,7 @@ How to include the API with Maven:
 <dependencies>
     <dependency>
         <groupId>com.github.Angeschossen</groupId>
-        <artifactId>VaultAPI</artifactId>
+        <artifactId>LandsAPI</artifactId>
         <version>4.3.3.0</version>
         <scope>provided</scope>
     </dependency>
