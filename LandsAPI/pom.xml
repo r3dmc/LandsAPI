@@ -6,7 +6,7 @@
 
     <groupId>com.github.Angeschossen</groupId>
     <artifactId>LandsAPI</artifactId>
-    <version>4.3.2.0</version>
+    <version>4.3.3.0</version>
     <name>LandsAPI</name>
 
     <repositories>
