@@ -6,7 +6,7 @@ import me.angeschossen.lands.api.war.War;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 import java.util.UUID;
 
 public interface LandPlayer {

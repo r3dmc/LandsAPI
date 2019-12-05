@@ -3,8 +3,8 @@ package me.angeschossen.lands.api.player;
 import me.angeschossen.lands.api.land.ChunkCoordinate;
 import org.bukkit.Location;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
 import java.util.Collection;
 
 public interface Selection {
