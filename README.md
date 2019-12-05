@@ -1,4 +1,6 @@
 # LandsAPI - Abstraction Library API
+[![](https://jitpack.io/v/Angeschossen/LandsAPI.svg)](https://jitpack.io/#Angeschossen/LandsAPI)
+
 
 How to include the API with Maven: 
 ```xml
