@@ -1,4 +1,4 @@
-# LandsAPI - Abstraction Library API
+# LandsAPI - Integrate Lands into your Plugin
 [![](https://jitpack.io/v/Angeschossen/LandsAPI.svg)](https://jitpack.io/#Angeschossen/LandsAPI)
 
 
