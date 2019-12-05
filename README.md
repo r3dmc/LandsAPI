@@ -31,6 +31,10 @@ dependencies {
 }
 ```
 
+
+You can also download the jar file from here: https://github.com/Angeschossen/LandsAPI/releases
+
+
 ## Implementing Lands
 Examble:
 
