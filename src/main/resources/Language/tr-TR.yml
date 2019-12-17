@@ -1,0 +1,644 @@
+
+general:
+  prefix: '&8[&aKlanlar&8] '
+  wYes: '&aEvet'
+  wNo: '&cHayır'
+  none: '&8Yok'
+  disabled: '&cDevre Dışı'
+  wilderness: '&aEl Değmemiş Topraklar'
+  title:
+    land: '&7Sahibi: &b %owner%&7.'
+    safezone: '&7Artık güvendesin.'
+  time:
+    days: gün
+    hours: saat
+    minutes: dakika
+    seconds: saniye
+  status:
+    online: '&açevrimiçi'
+    offline: '&cçevrimdışı'
+  top:
+    title: '&7-----<- &5En İyi Klanlar &8(&7Toplam:&b {total}&8) &7->-----'
+    entry: '&c#{pos} &a{land} &7Bakiye:&e {value} Ron'
+    next-page: '&7Sonraki sayfa: &8/&2klan-top {next}'
+    last-updated: '&7Son güncelleme: {time}'
+    footer: '&7-----<- &5En İyi Klanlar &8(&7Toplam:&b {total}&8) &7->-----'
+  integration:
+    dynmap:
+      land:
+        description: '<div class="\&quot;infowindow\&quot;"><span style="font-size:
+          200%;"><span style="color: #00ff00;">{land}</span><br /></span>{title}<br
+          /><br /> Sahip: <span style="font-weight: bold; color: #ff0000;">{owner}</span><br
+          />Yöneticiler: <span style="font-weight: bold;">{admins}</span><br />Üyeler:
+          <span style="font-weight: bold;">{members}</span></div>'
+        spawn: '<div class="\&quot;infowindow\&quot;"><span style="font-size: 120%;"><span
+          style="font-size: 120%;"><span style="color: #00ccff;">Merkez</span><br
+          /></span></span> <p>Herkese Açık mı ?: {public}</p> </div>'
+  sign:
+    topLand:
+      line-1: '&c#&l{place}'
+      line-2: '&8<&a {land} &8>'
+      line-3: '&7- {owner}'
+      line-4: '&7Bakiye:&2 {value} Ron'
+    noLand:
+      line-1: ' '
+      line-2: '&cGösterilecek'
+      line-3: '&cklan yok.'
+      line-4: ' '
+  autoAction:
+    claim: '&aChunk alımı'
+  map:
+    yours: '&a▉ '
+    others: '&c▉ '
+    friendly: '&5▉ '
+    current-location: '&e▉ '
+    wilderness: '&2▉ '
+    top: '&7-<------------<- &6Klanlar Harita &7->------------>-'
+    info:
+      wilderness: ' &2▉ &7= El Değmemiş Topraklar'
+      yours: ' &a▉ &7= Seninkiler'
+      trusted: ' &5▉ &7= Dost'
+      others: ' &c▉ &7= Diğerleri'
+      position: ' &e▉ &7= Pozisyon'
+    bottom: '&7-<------------<- &6Klanlar Harita &7->------------>-'
+  land-inbox:
+    land:
+      created: '&e{date} &b{land}&7 isimli klanını oluşturdun.'
+      upkeep:
+        chunk-deleted: '&e{date} &7Son alınan chunk &8(&7X:&b {x} &7Z:&b {z}&8) &7silindi,
+          çünkü bakım maliyetini ödeyemedin. Maliyet:&c {cost} Ron'
+        warning: '&e{date} &7Bakım masrafını ödeyemedin. Maliyet:&c {cost}'
+        paid: '&e{date} &7Klanın bakım masrafını ödedi. Maliyet:&c {cost}'
+    player:
+      join: '&e{date} &7Oyuncu&b {player} &7klanımıza katıldı.'
+    war:
+      declaration:
+        sent: '&e{date} &a {defender}&7 adlı klana savaş ilan edildi. Savaş &b {time}&7
+          süre içerisinde başlayacak.'
+        received: '&e{date} &cKlan&e {attacker} &csenin klanına karşı savaş ilan etti.
+          &b {time}&7 süre içerisinde savaş başlayacak.'
+      surrender:
+        sent: '&e{date} &cSavaşta pes edildi. &c {tribute} Ron &7haraç ödenildi.'
+        received: '&e{date} &aDüşman&b {land} &apes etti. &7&c {tribute} Ron &7haraç
+          alındı.'
+      won:
+        attacker: '&e{date} &aSavaş bitti. &7Saldıranlar &8({team}&8) &7kazandı. Saldıranlar:
+          {att-points} Savunanlar: {def-points}'
+        defender: '&e{date} &aSavaş bitti. &7Savunanlar &8({team}&8) &7kazandı. Saldıranlar:
+          {att-points} Savunanlar: {def-points}'
+  wars:
+    land-type:
+      enemy: '&cDüşman'
+      ally: '&aDost'
+    nametag:
+      enemy: '&cDÜŞMAN &8| '
+      ally: '&aDOST &8| '
+help:
+  general:
+    help-prefix: '&7Kullanım: '
+    header: '&7------------<- &2Klanlar Yardım &7Sayfa&2 {page} &8/&2 {pages} &7->------------'
+    page: '&7Sonraki sayfa için &8/&eklan-yardım {next} &7kullan.'
+    footer: '&7------------<- &2Klanlar Yardım &7Sayfa&2 {page} &8/&2 {pages} &7->------------'
+  command:
+    help: '&8/&aklan-yardım &8[&asayfa&8] - &7Yardım al'
+    edit: '&8/&aklan-düzenle &8<&aklan&8> &8- &7Klan için düzenleme moduna gir'
+    claim: '&8/&aklan-al &8[&7auto&8] - &7Chunk al'
+    create: '&8/&aklan-yarat &8<&aad&8> - &7Klan yarat'
+    leave: '&8/&aklan-ayrıl &8[&aklan] &8- &7Bir chunktan veya klandan ayrıl'
+    unclaim: '&8/&aklan-bırak &8- &7Sahip olduğun chunkı bırak'
+    delete: '&8/&aklan-sil &8<&aklan&8> &8- &7Klan sil'
+    trust: '&8/&aklan-güven &8<&aoyuncu&8> [&ahere&8] - &7Oyuncu davet et'
+    untrust: '&8/&aklan-güvenme &8[&ahere&8] - &7Oyuncuya güvenme'
+    setRole: '&8/&aklan-rolbelirle &8<&aoyuncu&8> <&arol&8> [&ahere&8] - &7Rol belirle'
+    accept: '&8/&aklan-kabul &8<&aklan&8> - &7Davet kabul et.'
+    deny: '&8/&aklan-reddet &8<&aklan&8> - &7Daveti reddet'
+    view: '&8/&aklan-göster &8- &7Chunk hakkında bilgi'
+    menu: '&8/&aklan-menü &8[&ahere&8] &8- &7Menüyü veya chunkı aç &8(&ahere&8)'
+    setSpawn: '&8/&aklan-merkezbelirle - &7Klan merkezi belirle'
+    spawn: '&8/&aklan-merkez &8[&aklan&8] - &7Klan merkezine ışınlan'
+    wild: '&8/&aklan-eldeğmemiş &8- &7Rastgele bir yere ışınlan'
+    top: '&8/&aklan-top &8[&asayfa&8] &8- &7Top 10 klanları gösterir'
+    selection: '&8/&aklan-seçim &8- &7Arazi alma seçimini aktifleştirir'
+    chat: '&8/&aklan-sohbet &8[&aklan&8] <&amesaj&8> &8- &7Klan Sohbeti'
+    rename: '&8/&aklan-yeniad &8<&aad&8> - &7Klanı yeniden adlandır'
+    teleport: '&8/&aklan-ışınlan &8[&adünya&8] <&ax&8> <&az&8> - &7Chunka ışınlan'
+    invites: '&8/&aklan-davetler &8- &7Alınan davetleri göster'
+    info: '&8/&aklan-bilgi &8[&aklan&8] - &7Klan hakkında bilgi göster'
+    player: '&8/&aklan-oyuncu &8<&aoyuncu&8> - &7Oyuncu hakkında bilgi göster'
+    map: '&8/&aklan-harita &8- &7Sohbet haritasını göster | Dinamik harita için internet
+      sitemizi ziyaret edin.'
+    balance: '&8/&aklan-bakiye &8[&aklan&8] - &7Klan bakiyesini göster'
+    deposit: '&8/&aklan-yatır &8<&amiktar&8> - &7Klan bankasına para yatır'
+    withdraw: '&8/&aklan-çek &8<&amiktar&8> - &7Klan bankasından para çek'
+    list: '&8/&aklan-listele &8[&adünya&8] - &7Bütün klanları listele'
+    wars:
+      declare: '&8/&asavaş-ilan &8<&aklan&8> - &7Savaş ilan et'
+      info: '&8/&asavaş-bilgi - &7Şuanki veya gelmekte olan savaşı görüntüle'
+      menu: '&8/&asavaş-menü &8- &7Savaş menüsünü aç'
+    admin:
+      admin: '&8/&aklan-yönetim &8<&aalt-komutlar&8> &8- &7Yönetim komutları'
+      debug: '&8/&aklan-çıktıgöster &8- &7Yüklenen veri istatistiklerini göster'
+      safezone: '&8/&aklan-güvenlialan &8- &7Güvenli alanı konfigüre et'
+      reload: '&8/&aklan-yenile &8- &7Konfigürasyonu ve mesajları yenile'
+      about: '&8/&aklan-hakkında &8- &7Klan hakkında bilgi göster'
+message:
+  no-permission: '&cBunu yapmak için yeterli iznin yok. &7Bu yetkiye ihtiyacın var:&b
+    {permission}&7.'
+  world-invalid: '&cBu bu dünyada yasaklandı. &7A Yönetici bunu konfigürasyona eklemeli.
+    Dünya:&b {world}'
+  feature-disabled: '&cBu özellik yönetici tarafından yasaklandı. &7Bunu kullanabilmen
+    için yöneticilerin &b {setting} &7ayarını konfigürasyonda aktif etmeleri gerek.'
+  noaccess:
+    chunk: '&cBunu bu chunkta yapman için iznin yok &8(&7Klan:&e {land} &7X:&e {x}
+      &7Z:&e {z}&8)&c. &7Bypass yetkisi: {bypass}'
+    land: '&cBunu bu klanda yapmak için yetkin yok &8(&7Klan:&e {land}&8)&7. Bypass
+      yetkisi: {bypass}'
+    land-not-owner: '&cBunu bu klan için yapamazsın. &e {land}&c. &7Kendi klanını
+      seç ve &8(/&aklanle &8<&aklan&8>) veya bir tane oluştur &8(/&aklan-yarat &8<&aad&8>)&7.
+      Bypass yetkisi:&b {bypass}'
+    role-weight:
+      land: '&cBu oyuncuyu düzenleyemezsin. &7Senden daha yüksek bir rütbeye sahip.
+        Yardım için arazi sahibine başvur.'
+      area: '&cBu oyuncuyu &4{area}&c alanında düzenleyemezsin &8(&7Klan:&2 {land}&8)&c.
+        &6{role} &7rolü senden daha öncelikli.'
+    claim: '&cBurada arazi alamazsın. &7Bu chunk başka bir yönetim eklentisine ait.
+      İsim:&b {plugin}'
+    place: '&cBurada blok koymaya iznin yok. &7Bu chunk &b{land}&7 klanına ait.'
+    break: '&cBurada blok kırmaya iznin yok. &7Bu chunk &b{land}&7 klanına ait.'
+    ignite: '&cBurada blok yakmaya iznin yok. &7Bu chunk &b {land}&7 klanına ait.'
+    enter: '&4{area}&alanına girmeye iznin yok bu alan &4{land}&c klanına ait. &7Önceki
+      lokasyonuna ışınlandırıldın.'
+    edit: '&cBu klanı düzenlemene iznin yok. &7Bu chunk &b {land}&7 klanına ait.'
+    interact:
+      general: '&cBurada etkileşime geçmeye iznin yok. &7Bu chunk &b{land}&7 klanına
+        ait.'
+      door: '&cBurada kapı açmaya iznin yok. &7Bu chunk &b{land}&7 klanına ait.'
+      mechanism: '&cBurada mekanizmaları kullanma iznin yok. &7Bu chunk &b {land}&7
+        klanına ait.'
+      container: '&cBurada depolama birimlerini açmaya iznin yok. &7Bu chunk &b {land}&7
+        klanına ait.'
+      villager: '&cBurada köylülerle ticaret yapmaya iznin yok. &7Bu chunk &b {land}&7
+        klanına ait.'
+    combat:
+      animal: '&cBurada hayvanlara saldırmaya iznin yok. &7Bu chunk &b {land}&7 klanına
+        ait.'
+      pvp: '&cBurada oyunculara saldırmaya iznin yok. &7Bu chunk {land}&7 klanına
+        ait.'
+      pvp-target: '&cHedefinin bu chunk üzerinde oyunculara vurmak için izni yok.
+        &7Onlarla burada savaşamazsın. &7Bu chunk&b {land}&7 klanına ait.'
+  claimblock:
+    dropped: '&cBazı almablokları yerde. &7Envanterinde yer kalmadı.'
+    success: '&7&b {blocks} &7adet almabloğu aldın. &7Onları almak için chunklara
+      yerleştir.'
+    not-owner: '&cBu alma bloğunu kullanmaya iznin yok. &7Bu sana ait değil. Bu almabloğu
+      &b {owner}&7 adlı oyuncuya ait.'
+  blacklist:
+    untrusted: '&cBu komutu burada kullanmaya iznin yok. &7Bu klanda güvenilmiş değilsin.'
+    general: '&cBu komutu alınmış arazilerde kullanmaya iznin yok.'
+  autoAction:
+    stopped: '&cŞuanki otomatik eylemin durduruldu. &7Maksimum tekrara ulaştın. İsim:&b
+      {name}'
+    started: '&7Otomatik eylem başarıyla başlatıldı. İsim:&b {name}'
+    removed: '&7Otomatik eylem başarıyla durduruldu. &7İsim:&b {name}'
+  gui:
+    chats:
+      title: '#t#&e&lSohbete yeni bir{newline}&e&lÜnvan gir'
+      title-done: '#t#&a&lBaşarıyla yeni{newline}&7&lKlan ünvanı belirlendi'
+      name: '#t#&e&lSohbete yeni bir{newline}&e&lİsim gir'
+      name-done: '#t#&2&lYeni klan adı{newline}&7&lBaşarıyla belirlendi'
+      cancel: '&7Sohbete &bcancel &7yazarak bu işlemi iptal edebilirsin.'
+  chat-action:
+    cancelled: '#t#&c&lİptal edildi{newline}&c&lSohbet Eylemi'
+    player: '&7Lütfen hedef oyuncunun adını giriniz.'
+    role:
+      create: '&7Yeni rol için bir isim giriniz. Renk kodlarını kullanabilirsiniz.'
+      delete: '&7Silmek istediğiniz rolün adını giriniz.'
+      exists: '&4 {role} &cadında bir rol zaten mevcut. &7Lütfen başka bir isim giriniz.'
+      max: '&cBu klan için daha fazla rol yaratamazsınız. &7Limitin olan &3{max} &7sayısına
+        ulaştın. Yetki: lands.roles.SAYI'
+    area:
+      create: '&7Yeni alan için bir isim giriniz. Renk kodlarını kullanabilirsiniz.'
+      delete: '&7Silmek istediğiniz alanın adını giriniz.'
+      exists: '&cAlan&4 {area} &czaten bu klanda mevcut &8(&7Klan:&2 {land}&8)&c.
+        &7Lütfen başka bir isim seçin.'
+      max: '&cBu klan için daha fazla alan yaratamazsın. &7Limitin olan &3 {max} &7alan
+        sayısına ulaştın. Yetki: lands.areas.SAYI'
+  current-war: '&cYou can''t do this right now. &7You land is currently engaged in
+    a war. &7Please try again after the war is over.'
+  event:
+    fly:
+      warning: '&7Burada uçmaya iznin yok. Uçuş modu birkaç saniye
+        içerisinde kapanacak. &8Bypass yetkisi: {permission}'
+      counter: '#t#&cUçuş modu devre dışı bırakılıyor{newline}&4{sec} &csaniye'
+      disabled: '&cUçuş modun devre dışı bırakıldı. &7Burada uçmak için yeterli iznin yok.'
+      disallowed: '&cBu klanda uçmak için yeterli iznin yok. &7Klan sahibi ile görüş.
+        &8Bypass yetkisi: lands.bypass.fly'
+      disallowed-wilderness: '&cEl Değmemiş Topraklarda uçmak için yetkin yok. &8Bypass
+        yetkisi: lands.bypass.wilderness.fly'
+    lands:
+      enter: '#t#&2&l{land}{newline}&3{title}'
+      leave: '#t#&2&lEl Değmemi Topraklar{newline}&7Doğayı hisset.'
+    safezones:
+      enter: '#t#&2&l{land}{newline}{title}'
+      leave: '#t#&2&lEl Değmemiş Topraklar{newline}&7Doğayı hisset.'
+    teleport:
+      already: '&cİkinci bir ışınlanma başlatamazsın, çünkü işlemde zaten
+        hali hazırda bir ışınlanma var. &7Lütfen tamamlanana kadar bekleyin.'
+      started: '&7Işınlanma işlemi başlatıldı. &5 {sec} &7saniye içinde ışınlanılacak.
+        Lütfen hareket etmeyin.'
+      cancelled: '&cIşınlanman iptal edildi. &7Lütfen beklerken
+        hareket etmeyin.&5 {sec} &7saniye bekleyeceksiniz.'
+      chunk: '#t#&9&lIşınlanıldı{newline}&7X: {x} Z: {z} Maliyet:&c {cost} &d&lRon'
+      cancelled-plugins: '&cIşınlanma bir diğer eklenti tarafından iptal edildi. &7Lütfen
+        diğer eklentrilerinizi kontrol edin. &7Bu Lands''den kaynaklanan bir sorun değil.'
+command:
+  general:
+    land-not-exist: '&e{land} &cadlı bir klan yok. &7Bu dünyada &b{land} &7isimli
+      bir klan yok.'
+    area-not-exist: '&cAlan&4 {area} &4 {land}&c klanında bulunamadı. &7Yazım yanlışı?'
+    role-not-exist: '&cRol&e {role} &4{land} &cklanının&4 {area}&c adlı alanında bulunamadı.
+      &7Yazım yanlışı?'
+    land-not-member: '&e{land}&c klanında güvenilmiyorsun. &8/&aklan-menü &7komutunu
+      üye olduğun klanları görmek için kullanabilirsin.'
+    land-no-action: '&cBunu yapmana izin verilen bir klana üye değilsin. &8/&aklan-yarat
+      &7komutunu birtane yaratmak için kullanabilirsin.'
+    name-exists: '&cBu ad zaten başka bir klan tarafından alındı. &7Başka bir tane
+      seçmen gerekiyor.'
+    money-cost-bank: '&cMaliyeti ödemek için yeteri kadar paran yok. &b {cost} Ron&7
+      kadar para gerek. Klan bankana para yatırman gerekiyor: &8/&aklan-yatır {cost}'
+    money-cost: '&cMaliyeti ödemek için yeterli paran yok. &b {cost} Ron&7 kadar paraya
+      ihtiyacın var.'
+    lands-max: '&cDaha fazla klanın bir parçası olamazsın. &7Maksimum olan&b {max}
+      &7sayısına ulaştın. Yetki:&b lands.lands.NUMBER'
+    name-numbers: '&cKlan adında sayıları kullanamazsın. &7Lütfen sadece latin karakterleri
+      kullanın.'
+    name-accent: '&cKlan adında özel harfler kullanamazsın. &7Lütfen sadece latin
+      karakterleri kullanın.'
+    name-length: '&cAd çok uzun. &7Maksimum uzunluk &b {max} &7karakterdir.'
+    action-cooldown: '&cBunu şuan yapamazsın. &b {time} &7dakika beklemek zorundasın.'
+    land-none: '&cBu dünyada bir klanın üyesi değilsin gibi duruyor. &8/&aklan-yarat
+      &7 komutu ile bir klan yaratabilirsin.'
+    land-no-own: '&cBu dünyada bir klana sahip değilsin. &8/&aklan-yarat &7komutunu
+      bir klan yaratmak için kullanabilirsin.'
+    world-invalid: '&cBunu şuanki dünyada yapamazsın. &7Başka bir dünyaya gitmelisin.'
+    wilderness: '&cBu chunk El Değmemiş. &7Alınmış bir chunka gitmelisin. &8/&aklan-menü
+      &7komutu ile arazilerini görebilirsin.'
+    player-not-exist: '&e {player}&cadında bir oyuncu yok. &7Lütfen girdinizi kontrol
+      edin.'
+    player-not-online: '&e {player} &cadında çevrimiçi bir oyuncu yok. &7Lütfen girdinizi
+      kontrol edin.'
+    player-self: '&cBunu kendinle yapamazsın.'
+    banks-disabled: '&7Bankalar yönetici tarafından devre dışı bırakıldı. &7Yardım
+      için birine başvurun. Ayar: taxes.banks'
+    land-not-trusted: '&cBunu yapamazsın. &7Oyuncu&b {player} &7bu klanın bir parçası
+      değil &8(&7Klan:&e {land}&8)&7. &8/&aklan-güven&7 komutu ile önce ona güvenmelisin.'
+    land-max-members: '&e {land}&c klanında sana güvenilemiyor. &7Bu klan zaten maksimum
+      oyuncu sayısı olan &b {members} &7sayısına ulaştı. Bu klanın daha fazla lands.members.NUMBER
+      yetkisine ihtiyacı var.'
+    area-not-trusted: '&cBunu burada yapamazsın. &7Bu chunk üzerinde güvenilmedin
+      &8(&7X: {x} Z: {z}&8)&7. Bu chunk, &2{land}&7 klanının &6{area} &7alanına ait.'
+    invalid-number: '&cGirdin&4 {input} &cbir sayı değil. &3 {argument} &7argümanı
+      bir sayı olmalı.'
+  help:
+    help: '&7Yardım için &8/&aklan-yardım &7komutunu kullanın.'
+    cmd-not-exist: '&cAlt-komut bulunamadı. &7Komut&b {command} &7bulunamadı'
+    page-not-exist: '&cSayfa&e {page} &cbulunamadı. &7Yazım hatası?'
+  create:
+    land-other: '&cHem kendi klanının olmasına hem de başka bir klanın üyesi olmana
+      izin verilmiyor. &7Önce&b {land} &7klanını bırakmalısın. Yönetici bunu konfigürasyonda
+      devre dışı bırakabilir.'
+    max-own: '&cDaha fazla klan yaratamazsın. &7Maksimum olan&b {max} &7klan sayısına
+      ulaştın. Yetki:&b lands.ownlands.NUMBER'
+    success: '&b {land} &7klanı başarıyla &b {cost} Ron &7maliyeti ödenerek yaratıldı.
+      &8/&aklan-al&7 komutu ile arazi alabilirsin.'
+    broadcast: '&7Klan&b {land} &7başarıyla&b {player}&7 oyuncusu tarafından yaratıldı.'
+  rename:
+    success: '&7Başarıyla yeni isim olan&b {name} &7ismi bu klan için belirlendi.
+      &8(&7Klan:&e {land}&8)&7. Maliyet:&b {cost} Ron&7.'
+  edit:
+    success: '&7Bu klan için düzenleme moduna girdin. &8(&7Klan:&e {land}&8)&7. Bundan
+      sonraki, &8/&aklan-yarat &7veya &8/&aklan-güven&7, bu klan için çalıştırılacak.'
+  selection:
+    not-complete: '&cSeçimin tamamlanmadı. &7Lütfen konumların belirlendiğinden emin
+      olun &8(&bSOL TIK &7ve &9SAĞ TIK&8)&7. Seçim modunu &8/&aklan-seçim&7 yazarak
+      kapatabilirsiniz.'
+    max: '&cSeçimin içinde çok fazla chunk barındırıyor. &7Boyut:&b {current} &7İzin
+      verilen boyut:&b {max} &7Yetki: &blands.selection.NUMBER'
+    enableds: '&7Seçim modunu aktifleştirdin. &5SOL &7tıkı birinci konumu belirlemek
+      için kullan. &5SAĞ &7tıkı konum ikiyi belirlemek için kullan. Bunlardan sonra
+      seçime bu komutları uygulayabilirsin: &bklan-al&7, &bklan-güven&7, &bklan-güvenme&7,
+      &bklan-rolbelirle&7, &bklan-bırak&7, &bklan-ayrıl'
+    disabled: '#t#&5&lSeçim{newline}&c&lMod devre dışı bırakıldı'
+    world: '&cİki konum da aynı dünyada olmalı. &7Lütfen konum bir ve konum ikiyi
+      aynı dünyada belirleyin.'
+    pos:
+      cancelled: '&cBurada bir seçim belirleyemezsin. &7Bu chunk başka bir yönetim
+        eklentisine ait. İsim:&b {plugin}'
+      one: '#t#&5&lSeçim{newline}&b&lKonum 1 &8-> &7Belirlendi'
+      two: '#t#&5&lSeçim{newline}&b&lKonum 2 &8-> &7Belirlendi'
+    area:
+      conflicts: '&4 {conflicts} &cçakışma(lar) bulundu bu çakışmalar diğer alanlara
+        ayrılmış chunklardan kaynaklanıyor. &7Üstüneyazmayı onaylamak için &8/&3klan-seçim-ata
+        {area} confirm &7yazınız. Çakışmalar bu alanlara ait: {areas}'
+      assigned: '&7Başarıyla&3 {chunks} &7adet chunkı&6 {area} &7alanına atadın. &8(&7Klan:&2
+        {land}&8)&7.'
+  claim:
+    already: '&cBu chunkı alamazsın. &7Bu chunk zaten&2 {land}&7 klanına ait.'
+    auto-create: '&7Otomatik olarak sana bir klan kuruluyor, çünkü bu dünyada hiç
+      klanın yok. Daha sonra klanın adını &8/&3klan-yeniad&7 yazarak değiştirebilirsin.'
+    auto-create-fail: '&cOtomatik olarak klan oluşturma başarısız. &7Lütfen yukarıda
+      yeralan mesajları okuyun ve yardım için birine başvurun.'
+    near-other: '&cBu, &e {land}&c klanına çok yakın. &7Bu klandan uzaklaşman gerek.
+      Minimum chunk uzaklığı:&b {distance}&7.'
+    far-land: '&cBu chunkları alamazsın. &7Arazilerin klanına birleşik olmalı &8(&7Klan:&e
+      {land}&8)&7.'
+    success: '&7Başarıyla bu chunk alındı &8(&7Klan:&e {land} &7X:&e {x} &7Z:&e {z}&8)
+      &b {cost} Ron&7 maliyetiyle. Sonraki arazi alımı &b {next} Ron&7 maliyetinde
+      olacak.'
+    already-claimed: '&cSeçimindeki bir chunk zaten alınmış ve senin klanına ait değil
+      &8(&7X:&e {x} &7Z:&e {z}&8)&c. &7Bu chunk&b {land}&7 klanına ait.'
+    max-chunk: '&cBu klan için&e {chunks} &csayısında chunk alamazsın. &7 &b {land}
+      &7klanı için maksimum sayı&b {max} &7chunktır. Yetki: lands.chunks.NUMBER'
+    world: '&cBu klan için bu dünyada arazi alamzsın. &7Klan&b {land} &7sadece &b
+      {world}&7 dünyasında araziye sahip olabilir.'
+    selection: '&7Başarıyla bu klan için&b {chunks} &7chunk aldın &8(&7Klan:&e {land}&8)&7.
+      &b {cost} Ron&7 maliyet ödedin. Lütfen sadece daha önce alınmamış chunkların
+      alındığını unutmayın.'
+  leave:
+    land-owner: '&cBu klandan ayrılamazsın. &7Klanın sahibi olduğundan bu klanı silmeni
+      gerekir. &8/&aklan-sil&7 komutunu kullanın.'
+    selection: '&7Başarıyla seçimindeki &b {chunks} &7chunktan ayrıldın. Sahibi olduğun
+      chunklar ise silindi.'
+    land:
+      success: '&7Successfully left land&2 {land}&7. You don''t have access to this
+        land anymore.'
+    chunk:
+      success: '&7Successfully left this chunk. You don''t have access to this chunk
+        anymore.'
+  unclaim:
+    success: '&7Başarıyla bu chunkı bıraktın &8(&7X:&e {x} &7Z:&e {z}&8)&7. &b {back}
+      Ron &7kadar geri aldın.'
+    selection: '&7Başarıyla seçimini bıraktın. Lütfen sadece sahibi olduğun chunkların
+      bırakıldığını unutma.'
+  delete:
+    confirm: '&cBu eylemi onaylamalısın. &8/&aklan-sil {land} confirm&7.'
+    success: '&7Bu klan başarıyla silindi &8(&7Klan:&e {land}&8)&7.'
+    broadcast: '&7Klan&b {land} &b {player}&7 oyuncusu tarafından silindi.'
+  trust:
+    own-land: '&cBu oyuncunun hem bir klana sahip olmaya hem de başka bir klana üye
+      olmaya izni yok. &7Önce klanından ayrılmalı.'
+    invited: '&cBu oyuncu zaten davet edildi. &7Lütfen onlar kabul edene kadar bekleyiniz
+      &8(&7Klan:&e {land}&8)&7.'
+    max-lands: '&7Oyuncu&b {player} &7zaten maksimum klan sayısına ulaştı. Yönetici
+      onlara daha fazla klana sahip olmaları için yetki verebilir.'
+    max-members: '&e {player} &coyuncusuna bu klanda güvenilemiyor. &7Klan maksimum
+      üye sayısı olan&b {members} &7sayısına ulaştı. &8(&e{&7Klan: land}&8)&7.'
+    land:
+      already: '&cBu oyuncu zaten bu klanda güveniliyor &8(&7Klan:&e {land}&8)&7.'
+      target: '&7Oyuncu&şb {player} &7seni&b {land}&7 klanına davet etti. Kabul etmek
+        için &8/&aklan-kabul {land} &7komutunu kullanın.'
+      success: '&7Başarıyla&b {player} &7oyuncusu bütün klana davet edildi &8(&7Klan:&e
+        {land}&8)&7. Tek gereken daveti kabul etmeleri.'
+    area:
+      already: '&cBu oyuncuya zaten&6 {area}&c alanında güveniliyor. &8(&7Klan:&2
+        {land}&8)&7.'
+      target: '&7Oyuncu&3 {player} &7seni kendi klanına davet etti&8(&7Alan:&6 {area}
+        &7Klan:&2 {land}&8) &8/&3klan-kabul {land} &7komutunu davetini kabul etmek
+        için kullan.'
+      success: '&3 {player} &7adlı oyuncu başarıyla bu alana davet edildi. &8(&7Alan:&6
+        {area} &7Klan:&2 {land}&8)&7. Lütfen davetini kabul edene kadar bekle.'
+  untrust:
+    land:
+      already: '&cBu oyuncuya zaten bu klanda güvenilmiyor &8(&7Klan:&2 {land}&8)&7.'
+      inv-revoked: '&7Bu oyuncu için davet başarıyla geri çekildi. &8(&7Klan:&2 {land}&8)&7.'
+      success: '&7Başarıyla&3 {player} &7oyuncusuna artık güvenilmiyor &8(&7Klan:&2
+        {land}&8)&7.'
+    area:
+      already: '&cBu oyuncuya bu alanda zaten güvenilmiyor &8(&7Alan:&6 {area} &7Klan:&2
+        {land}&8)&7.'
+      inv-revoked: '&7Başarıyla bu oyuncu için davet geri çekildi. &8(&7Alan:&6 {area}
+        &7Klan:&2 {area}&8)&7.'
+      success: '&7Başarıyla&3 {player} &7oyuncusuna bu alanda güvenilmiyor. &8(&7Alan:&6
+        {area} &7Klan:&2 {area}&8)&7.'
+  setrole:
+    not-exist: '&cRol&e {role} &cyok. &7Yanlış yazım?'
+    land:
+      not-trusted: '&cOyuncu&e {player} &cbu klanda güvenilmiyor. &8(&7Klan:&e {land}&8)&7.
+        İlk önce onlara güvenin.'
+      success: '&7Başarıyla &b{role} &7rolü&b {player} &7oyuncusu için tüm klanda
+        belirlendi&8(&7Klan:&e {land}&8)&7.'
+    area:
+      not-trusted: '&cOyuncu&4 {player} &cbu alanda güvenilmiyor &8(&7Alan:&6 {area}
+        &7Klan:&2 {land}&8)&7. Lütfen ilk önce onlara güvenin.'
+      success: '&7Başarıyla&3 {role} &7rolü&3 {player} &7oyuncusu için bu alanda belirlendi
+        &8(&7Alan:&6 {area} &7Klan:&2 {land}&8)&7.'
+  accept:
+    not-exist: '&e {land} &cklanında bir davetin yok veya sona ermiş. &7Lütfen girdinizi
+      kontrol ediniz.'
+    own-land: '&cBir klana sahip olmaya ve bir başkasının üyesi olmanız için izniniz
+      yok. &7Önce kendi klanınızdan ayrılınız.'
+    max-lands: '&cDaha fazla klana katılamazsın. &7Sadece&b {max} &7adet klanın olabilir.
+      Yetki: &blands.lands.NUMBER'
+    notification: '&7Hala başka klanlardan&b {invites} &7adet davete sahipsin. &8/&aklan-davetler
+      &7yazarak onların bir listesine ulaşabilirsin.'
+    land:
+      success: '&7&b {land}&7 klanının daveti başarıyla kabul edildi. Artık bütün
+        klana erişimin var.'
+      broadcast: '&b{land} &8| &7Oyuncu&b {player} &7klanımıza katıldı&7.'
+    area:
+      success: '&7Başarıyla&2 {land} &7klanından&6 {area}&7 alanı için davet kabul
+        edildi.'
+      broadcast: '&2{land} &8| &7Oyuncu&3 {player} &7artık&6 {area} &7alanının bir
+        üyesi Klan:&2 {land}&7.'
+  deny:
+    not-exist: '&e {land} &cklanında bir davetin yok veya süresi dolmuş. &7Lütfen
+      girdinizi kontrol ediniz.'
+    success: '&7Başarıyla&b {land}&7 klanının davetini reddettin.'
+  teleport:
+    world-not-exist: '&e {world} &cadında bir dünya yok.'
+    chunk-not-claimed: '&cBu chunk alınmadı &8(&7X:&e {x} &7Z:&e {z}&8)&c. &7Bypass
+      yetkisi:&b lands.bypass.wilderness.teleport'
+    success: '#t#&9&lIşınlanıldı{newline}&7X: {x} Z: {z} Alındı: {claimed}'
+  spawn:
+    not-exist: '&e {land}&c klanı için bir merkez yok. &7Önce birisi &8/&aklan-merkezbelirle&7
+      komutu ile belirlemeli.'
+    not-allowed: '&cBu klanın merkezine ışınlanmana iznin yok. &7Bunu yapmak için
+      klan sahibi sana yetki vermeli. Yardım için onunla görüş &8(&7Klan:&e {land}&8)&7.'
+    successs: '#t#&9&lIşınlanıldı{newline}&7&lKlan&a {land} &7&lMaliyet:&a {cost}
+      Ron'
+  wild:
+    no-location: '&cKonfigürasyondaki filtrede eşleşen güvenli bir bölge bulunamadı.
+      &7Maksimum x ve z yarıçaplarını 0''a eşitlemeyi rastgele bir ışınlama için belirlemeyi
+      deniyebilirsin. Minimum uzaklık seçeneği düşürübelirsin de.'
+    success: '&7Rastgele ışınlandın &8(&7X:&e {x} &7Z:&e {z}&8)&7. Maliyet:&b {cost}
+      Ron&7.'
+  deposit:
+    number: '&7You need to specify an amount of money. Use &8/&aLand deposit &8<&aAmount&8>
+      &7or &8/&aLand deposit &8<&aLand&8> <&aAmount&8>&7.'
+    success: '&7You successful put&b ${cost} &7in the land bank. &7New balance of
+      bank:&b ${bank} &8(&7Land:&e {land}&8)'
+  withdraw:
+    number: '&7Paranın miktarını belirtmelisin. Use &8/&aklan-çek &8<&aMiktar&8> &7veya
+      &8/&aklan-çek &8<&aKlan&8> <&aMiktar&8>&7.'
+    success: '&7Başarıyla&b {cost} Ron&7miktarını klan bankasından aldın. &7Bankanın
+      yeni bakiyesi:&b {bank} Ron &8(&7Klan:&e {land}&8)'
+    balance: '&7Bakiye: &b {balance} Ron &8(&7Klan:&e {land}&8)&7.'
+  balance: '&7Bakiye&b {balance} &d&lRon&7 &8(&7Klan:&e {land}&8)&7.'
+  menu:
+    no-permission-other: '&cBaşka oyuncuların arayüzlerini açmaya iznin yok. &7Gereken
+      yetki:&e lands.command.menu.others'
+    notExist: '&cOyuncu hakkında hiçbir veri yok.'
+  chat:
+    activated: '&7Klan sohbeti aktif edildi. Klanınla sohbet etmek için sohbete mesaj
+      yaz. &5NOT: &7Eklenti, senin &8/&aklan-düzenle &7kısmında varolan klanını klan
+      sohbeti olarak ele alır.'
+    deactivated: '&7Klan sohbeti başarıyla devre dışı bırakıldı.'
+    formats: '&a{land} &8| {role} &7{player} &8»&f {message}'
+  setspawn:
+    force-land: '&cYou can only set the land spawn on your land. &7Go to your land&2
+      {land} &7first. &8A administrator can change that in config.'
+    successs: '#t#&a&lSpawn set{newline}&7&lCost:&b&l ${cost}'
+list:
+  views:
+  - '&7---------<- &5&lKlan Görünümü &7->---------'
+  - '&7Klan:&a {land}'
+  - '&7Alan:&6 {area}'
+  - '  &8Chunk &7X: {x} Z: {z}'
+  - '  &8Vergi:&c ${tax}'
+  - '  &8Oyuncular: {players}'
+  - '&7---------<- &5&lKlan Görünümü &7->---------'
+  wars:
+    declaration:
+    - '&6&nSavaş İlanı:'
+    - ' '
+    - '&8- &7Saldıranlar:&c {attackers}'
+    - '  &7Savunanlar:&a {defenders}'
+    - ' '
+    - '  &5~{time}'
+    - '&8- &7içerisinde savaş başlayacak.'
+    current:
+    - '&6&nŞimdiki Savaş:'
+    - ' '
+    - '&8- &4Saldıranlar'
+    - '      &7Klanlar: {attackers}'
+    - '      &7Öldürmeler: {att-points}'
+    - '&8- &2Savunanlar'
+    - '      &7Klanlar: {defenders}'
+    - '      &7Öldürmeler: {def-points}'
+    - ' '
+    - '  &5~{time}'
+    - '&8- &7içerisinde savaş bitecek.'
+    started:
+      attacker:
+      - '&cSavaş başladı!'
+      - ' '
+      - '&8- &7Saldıranlar &8(&bSEN&8)&7: {attackers}'
+      - '  &7Savunanlar: {defenders}'
+      - ' '
+      - '  &5~{time}'
+      - '&8- &7içerisinde savaş bitecek.'
+      defender:
+      - '&cSavaş başladı!'
+      - ' '
+      - '&8- &7Saldıranlar: {attackers}'
+      - '  &7Savunanlar &8(&bSEN&8)&7: {defenders}'
+      - ' '
+      - '  &5~{time}'
+      - '&8- &7içerisinde savaş bitecek'
+    won:
+      attacker:
+      - '&6Savaş bitti:'
+      - '&7Saldıranlar &8({team}&8) &7kazandı.'
+      - ' '
+      - '&8- &eİstatistikler'
+      - '  &7Saldıran Puanları:&c {att-points}'
+      - '  &7Savunan Puanları:&a {def-points}'
+      - ' '
+      - '&8- &7Savaşın aldığı süre:'
+      - '  &5~{time}'
+      defender:
+      - '&6Savaş bitti:'
+      - '&7Savunan &8({team}&8) &7kazandı.'
+      - ' '
+      - '&8- &eİstatistikler'
+      - '  &7Savunan puanları:&a {def-points}'
+      - '  &7Saldıran puanları:&c {att-points}'
+      - ' '
+      - '&8- &7Savaşın aldığı süre'
+      - '  &5~{time}'
+wars:
+  message:
+    noaccess:
+      pillage: '&cHiç savunan yokkken bir araziyi yağmalayamazsın. &7Lütfen en az&b
+        {defenders} &7savunanın oyuna girmesini bekleyin.'
+      war-chunk: '&cBu klanın savaşında bunu yapamazsınız. &7Bypass permission: {bypass}'
+    started:
+      broadcast: '&7Saldıran &c {attacker} &7ve savunan&a {defender} &7arasındaki
+        savaş balşadı. Savaş&5 {time}&7 içinde bitecek.'
+    ended:
+      broadcast: '&7Saldıran&c {attacker} &7ve savunan&a {defender} &7arasındaki savaş
+        bitti. &5{time} &7kadar süre aldı.'
+    joined:
+      attacker:
+        enemy: '&cDÜŞMAN &8| &6Klan&e {land} &6düşmana &2savunan&6 olarak katıldı.'
+        ally: '&2DOST &8| &7Klan&b {land} &7bizim tarafımıza &csaldıran&7 olarak katıldı.
+          Artık bizim tarafımızda savaşıyorlar.'
+      defender:
+        enemy: '&cDÜŞMAN &8| &6Klan&e {land} &6düşmana &csaldıran&6 olarak katıldı.'
+        ally: '&2DOST &8| &7Klan&b {land} &7senin tarafına savunan olarak katıldı&7.
+          Artık senin tarafında savaşıyorlar.'
+    tribute-payed:
+      defender: '&2DOST &8| &7Klan&b {land}&7saldıran tarafa &c{tribute} &d&lRon&7
+        haraç ödedi. Savaş sona erdi.'
+      attacker: '&2DOST &8| &7Klan&b {land} &c{tribute} &d&lRon &7kadar haracı &b
+        {attacker}&7 klanına ödedi. Savaş sona erdi.'
+    surrender:
+      tribute:
+        received:
+          all: '&aDüşman klanı&b {land} &ateslim oldu. &7Haraç bölündü. Sen ve müttefikleriniz
+            klan başı&b {tribute} &d&lRon &7aldınız.'
+          single: '&aDüşman klan&b {land} &ateslim oldu. &7Klan&b {land} &b {tribute}
+            &d&lRon&7 kadar haraç aldı.'
+      end: '&7Klan&b {land} &7teslim oldu. Savaş artık birti. Düşmana&c {tribute}
+        &d&lRon &7haraç ödediler.'
+    war-shield:
+      set: '&aYeni savaş kalkanın&b {time}&7 için aktif.'
+    kill:
+      target:
+        attackers: '&7Takım arkadaşımız&c {attacker} &7savunan tarafından öldürüldü&a
+          {defender}&7.'
+        defenders: '&7Takım arkadaşımız&a {defender} &7saldıran tarafından öldürüldü&c
+          {attacker}&7.'
+      killer:
+        attackers: '&7Takım arkadaşımız&c {attacker} &7savunanı öldürdü&a {defender}&7.'
+        defenders: '&7Takım arkadaşımız&a {defender} &7saldıranı öldürdü&c {attacker}&7.'
+  command:
+    general:
+      no-war: '&e {land} &cadlı klanının aktif veya gelmekte olan bir savaşı yok.
+        &7Şuanlık bu klan için her şey barışçıl.'
+    declare:
+      trusted: '&cBu klana karşı savaş ilan edemezsin. &7Çünkü onun bir üyesisin Lütfen
+        önce hedef klandan ayrıl.'
+      war-shield: '&cBu klana karşı savaş ilan edemezsin. &7Önümüzdeki &a {time}&7
+        için savaş kalkanına sahip.'
+      already:
+        war: '&cKlanın şuan başka bir savaşa katılamaz. &7Önce şuanki savaşın bitmesi
+          gerek.'
+        war-defender: '&cDiğer klan şuan bir savaşta. &7Lütfen savaş bittiğinde tekrar
+          deneyiniz.'
+        declaration: '&cKlanın zaten gelmekte olan bir savaşa sahip. &7Klan menüsünden
+          bunu kontrol edebilirsin.'
+        declaration-defender: '&cDiğer klanın zaten bir savaş ilanı var. &7Lütfen
+          {time} içinde tekrar deneyin.'
+      is-ally: '&cBu klana karşı savaş ilan edemezsin, çünkü bu klan senin müttefikin.
+        &7Sen ve hedef klan aynı birliğin bir parçasısınız.'
+      success: '&7Klanın&c {attacker} &7başarılı bir şekilde&a {defender}&7 klanına
+        savaş ilan etti. Savaş &5 ~{time}&7 kadar süre içerisinde başlayacak.'
+      target:
+        land: '&cLand&e {attacker} &cdeclared war against your land&e {defender}&c.
+          &7The war will start in&5 {time}&7.'
+      broadcast: '&7Klan&c {attacker} &7klanı &a {defender}&7 klanına savaş ilan etti.
+        Savaş, &5 {time}&7 içinde başlayacak.'
+    info:
+      peace: '&b {land}&7 klanı için her şey barışçıl görünüyor. &7Süren veya ilan
+        edilen herhangi bir savaş bu klan için yok.'
